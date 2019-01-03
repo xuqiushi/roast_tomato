@@ -1,0 +1,13 @@
+config_default.py
+.idea/*
+fabfile.py
+front_end/node_modules
+.DS_Store
+__pycache__
+back_end/.DS_Store
+back_end/__pycache__/
+back_end/api/__pycache__
+back_end/controller/__pycache__/
+back_end/models/__pycache__/
+back_end/views/__pycache__/
+dist

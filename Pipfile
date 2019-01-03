@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+
+[dev-packages]
+watchdog = "*"
+fabric3 = "*"
+
+[packages]
+aiohttp = "*"
+supervisor = {git = "https://github.com/Supervisor/supervisor"}
+jinja2 = "*"
+aiomysql = "*"
+markdown2 = "*"
+
+[requires]
+python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true
