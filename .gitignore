@@ -1,4 +1,5 @@
 config_default.py
+.idea
 .idea/*
 fabfile.py
 front_end/node_modules
