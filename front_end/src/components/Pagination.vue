@@ -26,7 +26,12 @@
         v-if="PaginationStructure.selectNow - 2 > 1"
         class="page-item disabled"
       >
-        ...
+        <a
+          class="page-link disabled"
+          href="#"
+        >
+          ...
+        </a>
       </li>
       <li
         v-if="PaginationStructure.selectNow - 2 > 0"
@@ -79,7 +84,12 @@
         v-if="PaginationStructure.countAll - PaginationStructure.selectNow > 3"
         class="page-item disabled"
       >
-        ...
+        <a
+          class="page-link disabled"
+          href="#"
+        >
+          ...
+        </a>
       </li>
       <li
         :class="

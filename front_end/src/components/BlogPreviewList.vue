@@ -50,4 +50,8 @@ export default class BlogPreviewList extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+  .card {
+    border: 0;
+  }
+</style>
