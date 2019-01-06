@@ -4,3 +4,7 @@ export interface PreviewBlogContent {
   summary: string;
   createAt: number;
 }
+export interface PaginationPara {
+  countAll: number,
+  selectNow: number,
+}

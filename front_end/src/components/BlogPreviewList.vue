@@ -1,8 +1,6 @@
 <template>
   <div class="row">
-    <div
-      class="col-12"
-    >
+    <div class="col-12">
       <div
         v-for="(value, previewBlogIndex) in previewBlogList"
         :key="value + previewBlogIndex"
@@ -52,5 +50,4 @@ export default class BlogPreviewList extends Vue {
 }
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

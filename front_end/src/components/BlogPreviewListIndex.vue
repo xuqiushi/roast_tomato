@@ -1,8 +1,6 @@
 <template>
   <nav class="bd-toc list-group-flush">
-    <div
-      id="blog-list"
-    >
+    <div id="blog-list">
       <a
         v-for="(value, previewBlogIndex) in previewBlogList"
         :key="value + previewBlogIndex"
@@ -30,14 +28,14 @@ export default class BlogPreviewListIndex extends Vue {
 </script>
 
 <style scoped>
-  .bd-toc {
-    position: sticky;
-    top: 4rem;
-    height: calc(100vh - 4rem);
-    overflow-y: auto;
-    order: 2;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    font-size: .875rem;
-  }
+.bd-toc {
+  position: sticky;
+  top: 4rem;
+  height: calc(100vh - 4rem);
+  overflow-y: auto;
+  order: 2;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 0.875rem;
+}
 </style>

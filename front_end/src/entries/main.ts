@@ -19,8 +19,9 @@ library.add(faTimes, faPencilAlt, faTimesCircle, faCheck, faPlusCircle)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.prototype.$http = axios
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
+import '../scss/custom.scss'
 // import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css'
 import 'bootstrap/js/dist/util'
 import 'bootstrap/js/dist/scrollspy';

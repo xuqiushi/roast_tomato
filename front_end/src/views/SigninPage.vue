@@ -12,9 +12,10 @@ import { Component } from "vue-property-decorator";
   components: { SigninForm }
 })
 export default class SigninPage extends Vue {
-  created(){
-    document.body.style.height = document.documentElement.clientHeight.toString() + 'px'
-    document.getElementsByTagName("div")[0].style.height = '100%'
+  created() {
+    document.body.style.height =
+      document.documentElement.clientHeight.toString() + "px";
+    document.getElementsByTagName("div")[0].style.height = "100%";
   }
 }
 </script>
