@@ -4,7 +4,7 @@
     <a
       class="navbar-brand"
       href="#"
-    />
+    ></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -14,7 +14,7 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      <span class="navbar-toggler-icon" />
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div
@@ -101,7 +101,7 @@
             aria-haspopup="true"
             aria-expanded="false"
             v-text="userName"
-          />
+          ></a>
           <div
             id="user-drop-down-li"
             class="dropdown-menu"

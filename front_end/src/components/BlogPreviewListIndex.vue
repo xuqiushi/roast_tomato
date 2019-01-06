@@ -7,7 +7,7 @@
         :href="'#blog-list' + previewBlogIndex"
         class="list-group-item list-group-item-action"
         v-text="previewBlogList[previewBlogIndex].name"
-      />
+      ></a>
     </div>
   </nav>
 </template>

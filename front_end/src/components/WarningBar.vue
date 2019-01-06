@@ -6,7 +6,7 @@
       class="alert alert-warning alert-dismissible fade show"
       role="alert"
     >
-      <strong v-text="warningMessages[index]" />
+      <strong v-text="warningMessages[index]"></strong>
       <button
         type="button"
         class="close"

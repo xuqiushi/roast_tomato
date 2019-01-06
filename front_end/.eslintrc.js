@@ -41,6 +41,18 @@ module.exports = {
     "aliCnCityList": true,
   },
   "rules": {
+    "vue/html-self-closing": ["error", {
+      "html": {
+        "void": "never",
+        "normal": "never",
+        "component": "never"
+      },
+      "svg": "never",
+      "math": "never"
+    }],
+    "vue/component-name-in-template-casing": ["error","PascalCase", {
+      "ignores": ["font-awesome-icon"]
+    }],
     // "no-unused-vars": 0,
     "typescript/no-unused-vars": [2],
     // prettier规则

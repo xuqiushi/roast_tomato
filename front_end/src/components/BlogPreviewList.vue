@@ -11,23 +11,23 @@
               :id="'blog-list' + previewBlogIndex"
               :href="'/blog/' + previewBlogList[previewBlogIndex].id"
               v-text="previewBlogList[previewBlogIndex].name"
-            />
+            ></a>
           </h2>
           <p>
             <small
               v-text="'发表于' + previewBlogList[previewBlogIndex].createAt"
-            />
+            ></small>
           </p>
           <p
             class="card-text"
             v-text="previewBlogList[previewBlogIndex].summary"
-          />
+          ></p>
           <p>
             <a
               :href="'/blog/' + previewBlogList[previewBlogIndex].id"
               v-text="'继续阅读'"
-            />
-            <i class="uk-icon-angle-double-right" />
+            ></a>
+            <i class="uk-icon-angle-double-right"></i>
           </p>
         </div>
       </div>
@@ -51,7 +51,7 @@ export default class BlogPreviewList extends Vue {
 </script>
 
 <style scoped>
-  .card {
-    border: 0;
-  }
+.card {
+  border: 0;
+}
 </style>

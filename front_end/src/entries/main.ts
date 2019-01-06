@@ -12,10 +12,11 @@ import {
   faPencilAlt,
   faTimesCircle,
   faCheck,
-  faPlusCircle
+  faPlusCircle,
 } from '@fortawesome/free-solid-svg-icons'
+import { faHtml5 } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faTimes, faPencilAlt, faTimesCircle, faCheck, faPlusCircle)
+library.add(faTimes, faPencilAlt, faTimesCircle, faCheck, faPlusCircle, faHtml5)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.prototype.$http = axios

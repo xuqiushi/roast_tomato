@@ -41,7 +41,7 @@
           class="page-link"
           href="#"
           v-text="PaginationStructure.selectNow - 2"
-        />
+        ></a>
       </li>
       <li
         v-if="PaginationStructure.selectNow - 1 > 0"
@@ -51,14 +51,14 @@
           class="page-link"
           href="#"
           v-text="PaginationStructure.selectNow - 1"
-        />
+        ></a>
       </li>
       <li class="page-item active">
         <a
           class="page-link"
           href="#"
           v-text="PaginationStructure.selectNow"
-        />
+        ></a>
       </li>
       <li
         v-if="PaginationStructure.countAll - PaginationStructure.selectNow > 1"
@@ -68,7 +68,7 @@
           class="page-link"
           href="#"
           v-text="PaginationStructure.selectNow + 1"
-        />
+        ></a>
       </li>
       <li
         v-if="PaginationStructure.countAll - PaginationStructure.selectNow > 2"
@@ -78,7 +78,7 @@
           class="page-link"
           href="#"
           v-text="PaginationStructure.selectNow + 2"
-        />
+        ></a>
       </li>
       <li
         v-if="PaginationStructure.countAll - PaginationStructure.selectNow > 3"

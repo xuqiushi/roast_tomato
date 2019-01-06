@@ -3,7 +3,7 @@
     class="form-register"
     @submit.prevent="signin()"
   >
-    <WarningBar class="sticky-top" />
+    <WarningBar class="sticky-top"></WarningBar>
     <div class="text-center mb-4">
       <img
         class="mb-4"

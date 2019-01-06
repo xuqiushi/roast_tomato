@@ -1,5 +1,5 @@
 <template>
-  <div><RegisterForm /></div>
+  <div><RegisterForm></RegisterForm></div>
 </template>
 
 <script lang="ts">

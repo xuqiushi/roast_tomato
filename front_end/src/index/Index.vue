@@ -1,6 +1,6 @@
 <!-- @format -->
 <template>
-  <div><RouterView /></div>
+  <div><RouterView></RouterView></div>
 </template>
 <script lang="ts">
 import Vue from "vue";
