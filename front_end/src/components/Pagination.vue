@@ -14,7 +14,10 @@
           Previous
         </a>
       </li>
-      <li class="page-item">
+      <li
+        v-if="PaginationStructure.selectNow > 1"
+        class="page-item"
+      >
         <a
           class="page-link"
           href="#"
@@ -90,6 +93,16 @@
         >
           ...
         </a>
+      </li>
+      <li
+        v-if="PaginationStructure.countAll > PaginationStructure.selectNow"
+        class="page-item"
+      >
+        <a
+          class="page-link"
+          href="#"
+          v-text="PaginationStructure.countAll"
+        ></a>
       </li>
       <li
         :class="

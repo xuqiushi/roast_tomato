@@ -45,10 +45,7 @@ import { PreviewBlogContent } from "../../typings/blogInterfaces";
 export default class BlogViewPage extends Vue {
   previewBlogList: PreviewBlogContent[] = [];
   testData = {};
-  paginationPara = {
-    countAll: 100,
-    selectNow: 20
-  };
+  paginationPara = {};
   created() {
     let body = $("body");
     body.addClass("scrolling");
@@ -63,6 +60,12 @@ export default class BlogViewPage extends Vue {
       url: "/api/blog_list"
     }).then(response => {
       this.previewBlogList = response.data.previewBlogList;
+    });
+    this.$http({
+      method: "post",
+      url: "api/get_blog_pagination"
+    }).then(response => {
+      this.paginationPara = response.data.paginationPara;
     });
   }
 }
