@@ -21,8 +21,11 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.prototype.$http = axios
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
-import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css'
-
+// import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css'
+import 'bootstrap/js/dist/util'
+import 'bootstrap/js/dist/scrollspy';
+import { start_mock } from '../mock/main-mock'
+start_mock()
 Vue.config.productionTip = false
 new Vue({
   router,

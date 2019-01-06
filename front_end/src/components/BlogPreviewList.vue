@@ -1,32 +1,37 @@
 <template>
-  <div>
+  <div class="row">
     <div
-      v-for="(value, previewBlogIndex) in previewBlogList"
-      :key="value + previewBlogIndex"
+      class="col-12"
     >
-      <div class="card mb-3">
-        <h2 class="card-title">
-          <a
-            :href="'/blog/' + previewBlogList[previewBlogIndex].id"
-            v-text="previewBlogList[previewBlogIndex].name"
+      <div
+        v-for="(value, previewBlogIndex) in previewBlogList"
+        :key="value + previewBlogIndex"
+      >
+        <div class="card mb-3">
+          <h2 class="card-title">
+            <a
+              :id="'blog-list' + previewBlogIndex"
+              :href="'/blog/' + previewBlogList[previewBlogIndex].id"
+              v-text="previewBlogList[previewBlogIndex].name"
+            />
+          </h2>
+          <p>
+            <small
+              v-text="'发表于' + previewBlogList[previewBlogIndex].createAt"
+            />
+          </p>
+          <p
+            class="card-text"
+            v-text="previewBlogList[previewBlogIndex].summary"
           />
-        </h2>
-        <p>
-          <small
-            v-text="'发表于' + previewBlogList[previewBlogIndex].createAt"
-          />
-        </p>
-        <p
-          class="card-text"
-          v-text="previewBlogList[previewBlogIndex].summary"
-        />
-        <p>
-          <a
-            :href="'/blog/' + previewBlogList[previewBlogIndex].id"
-            v-text="'继续阅读'"
-          />
-          <i class="uk-icon-angle-double-right" />
-        </p>
+          <p>
+            <a
+              :href="'/blog/' + previewBlogList[previewBlogIndex].id"
+              v-text="'继续阅读'"
+            />
+            <i class="uk-icon-angle-double-right" />
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -47,4 +52,5 @@ export default class BlogPreviewList extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

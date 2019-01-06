@@ -9,7 +9,12 @@ import RegisterForm from "@/components/RegisterForm.vue";
 @Component({
   components: { RegisterForm }
 })
-export default class RegisterPage extends Vue {}
+export default class RegisterPage extends Vue {
+  created(){
+    document.body.style.height = document.documentElement.clientHeight.toString() + 'px'
+    document.getElementsByTagName("div")[0].style.height = '100%'
+  }
+}
 </script>
 
 <style scoped>
