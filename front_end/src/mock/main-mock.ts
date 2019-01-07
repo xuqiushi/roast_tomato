@@ -15,13 +15,10 @@ export let start_mock = () => {
     },
   )
   Mock.mock(
-      /api\/get_blog_pagination/,
+      /api\/get_blog_pagination_count/,
       'post',
       {
-        'paginationPara': {
-            "countAll|50-200": 100,
-            "selectNow|1-50": 20,
-          }
+          "countAll|50-200": 100,
       },
   )
 }

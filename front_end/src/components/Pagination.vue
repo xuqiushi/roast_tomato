@@ -8,8 +8,8 @@
       >
         <a
           class="page-link"
-          href="#"
           tabindex="-1"
+          @click="sendSelectBlogPagination(PaginationStructure.selectNow - 1)"
         >
           Previous
         </a>
@@ -20,7 +20,7 @@
       >
         <a
           class="page-link"
-          href="#"
+          @click="sendSelectBlogPagination(1)"
         >
           1
         </a>
@@ -29,47 +29,43 @@
         v-if="PaginationStructure.selectNow - 2 > 1"
         class="page-item disabled"
       >
-        <a
-          class="page-link disabled"
-          href="#"
-        >
+        <a class="page-link disabled">
           ...
         </a>
       </li>
       <li
-        v-if="PaginationStructure.selectNow - 2 > 0"
+        v-if="PaginationStructure.selectNow - 2 > 1"
         class="page-item"
       >
         <a
           class="page-link"
-          href="#"
+          @click="sendSelectBlogPagination(PaginationStructure.selectNow - 2)"
           v-text="PaginationStructure.selectNow - 2"
         ></a>
       </li>
       <li
-        v-if="PaginationStructure.selectNow - 1 > 0"
+        v-if="PaginationStructure.selectNow - 1 > 1"
         class="page-item"
       >
         <a
           class="page-link"
-          href="#"
+          @click="sendSelectBlogPagination(PaginationStructure.selectNow - 1)"
           v-text="PaginationStructure.selectNow - 1"
         ></a>
       </li>
       <li class="page-item active">
         <a
           class="page-link"
-          href="#"
           v-text="PaginationStructure.selectNow"
         ></a>
       </li>
       <li
         v-if="PaginationStructure.countAll - PaginationStructure.selectNow > 1"
         class="page-item"
+        @click="sendSelectBlogPagination(PaginationStructure.selectNow + 1)"
       >
         <a
           class="page-link"
-          href="#"
           v-text="PaginationStructure.selectNow + 1"
         ></a>
       </li>
@@ -79,7 +75,7 @@
       >
         <a
           class="page-link"
-          href="#"
+          @click="sendSelectBlogPagination(PaginationStructure.selectNow + 2)"
           v-text="PaginationStructure.selectNow + 2"
         ></a>
       </li>
@@ -87,10 +83,7 @@
         v-if="PaginationStructure.countAll - PaginationStructure.selectNow > 3"
         class="page-item disabled"
       >
-        <a
-          class="page-link disabled"
-          href="#"
-        >
+        <a class="page-link disabled">
           ...
         </a>
       </li>
@@ -100,7 +93,7 @@
       >
         <a
           class="page-link"
-          href="#"
+          @click="sendSelectBlogPagination(PaginationStructure.countAll)"
           v-text="PaginationStructure.countAll"
         ></a>
       </li>
@@ -127,7 +120,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import { Component, Prop } from "vue-property-decorator";
+import { Component, Prop, Emit } from "vue-property-decorator";
 import { PaginationPara } from "../../typings/blogInterfaces";
 @Component
 export default class Pagination extends Vue {
@@ -137,6 +130,13 @@ export default class Pagination extends Vue {
     default: {}
   })
   PaginationStructure!: PaginationPara;
+  @Emit()
+  emitBlogPagination(pageNumber: number): number {
+    return pageNumber;
+  }
+  sendSelectBlogPagination(pageNumber: number) {
+    this.emitBlogPagination(pageNumber);
+  }
 }
 </script>
 
