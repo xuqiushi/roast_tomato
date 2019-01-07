@@ -109,7 +109,7 @@
       >
         <a
           class="page-link"
-          href="#"
+          @click="sendSelectBlogPagination(PaginationStructure.selectNow + 1)"
         >
           Next
         </a>
