@@ -1,6 +1,6 @@
 <!-- @format -->
 <template>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark">
     <a
       class="navbar-brand"
       href="#"
@@ -140,5 +140,8 @@ export default {
 <style scoped>
 #user-drop-down-li {
   min-width: 5em;
+}
+nav {
+  background-color: rgba(6, 1, 5, 0.86);
 }
 </style>

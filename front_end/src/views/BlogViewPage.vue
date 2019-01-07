@@ -10,7 +10,10 @@
             <BlogPreviewList
               :preview-blog-list="previewBlogList"
             ></BlogPreviewList>
-            <Pagination :pagination-structure="paginationPara"></Pagination>
+            <Pagination
+              :pagination-structure="paginationPara"
+              @emit-blog-pagination="changeCurrentPage"
+            ></Pagination>
           </div>
         </div>
         <div class="col-12 col-md-3 col-xl-2">
@@ -44,8 +47,10 @@ import { PreviewBlogContent } from "../../typings/blogInterfaces";
 })
 export default class BlogViewPage extends Vue {
   previewBlogList: PreviewBlogContent[] = [];
-  testData = {};
-  paginationPara = {};
+  paginationPara = {
+    countAll: 1,
+    selectNow: 1
+  };
   created() {
     let body = $("body");
     body.addClass("scrolling");
@@ -57,16 +62,20 @@ export default class BlogViewPage extends Vue {
   mounted() {
     this.$http({
       method: "post",
-      url: "/api/blog_list"
+      url: "/api/blog_list",
+      data: this.paginationPara.selectNow
     }).then(response => {
       this.previewBlogList = response.data.previewBlogList;
     });
     this.$http({
       method: "post",
-      url: "api/get_blog_pagination"
+      url: "api/get_blog_pagination_count"
     }).then(response => {
-      this.paginationPara = response.data.paginationPara;
+      this.paginationPara.countAll = response.data.countAll;
     });
+  }
+  private changeCurrentPage(pageNumber: number) {
+    this.paginationPara.selectNow = pageNumber;
   }
 }
 </script>
