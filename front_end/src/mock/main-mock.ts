@@ -21,4 +21,14 @@ export let start_mock = () => {
           "countAll|50-200": 100,
       },
   )
+  Mock.mock(
+    /api\/blog\/.*/,
+    'post',
+    {
+      "id": "@string(20)",
+      "name": '@title',
+      "content": '@cparagraph(10)',
+      "createAt": '@integer(10)',
+    },
+  )
 }
