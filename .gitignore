@@ -11,4 +11,6 @@ back_end/api/__pycache__
 back_end/controller/__pycache__/
 back_end/models/__pycache__/
 back_end/views/__pycache__/
+back_end/static
+back_end/templates
 dist
