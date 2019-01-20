@@ -11,6 +11,7 @@ export interface PaginationPara {
 export interface BlogDetail {
   id: string;
   name: string;
+  userId: string;
   content: string;
   creatAt: number;
 }

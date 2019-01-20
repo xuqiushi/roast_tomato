@@ -27,8 +27,18 @@ export let start_mock = () => {
     {
       "id": "@string(20)",
       "name": '@title',
-      "content": '@cparagraph(10)',
+      "userId": '@string(20)',
+      "content": '@cparagraph(50)',
       "createAt": '@integer(10)',
+    },
+  )
+  Mock.mock(
+    /api\/users\/.*/,
+    'post',
+    {
+      "id": "@string(20)",
+      "userName": '@cname',
+      "userMainImage": '@image(200x100)',
     },
   )
 }
