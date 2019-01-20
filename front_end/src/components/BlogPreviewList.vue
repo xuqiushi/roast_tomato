@@ -7,11 +7,17 @@
       >
         <div class="card mb-3">
           <h2 class="card-title">
-            <a
-              :id="'blog-list' + previewBlogIndex"
-              :href="'/blog/' + previewBlogList[previewBlogIndex].id"
-              v-text="previewBlogList[previewBlogIndex].name"
-            ></a>
+            <RouterLink
+              :to="{
+                name: 'BlogDetailPage',
+                params: { blogId: previewBlogList[previewBlogIndex].id }
+              }"
+            >
+              <a
+                :id="'blog-list' + previewBlogIndex"
+                v-text="previewBlogList[previewBlogIndex].name"
+              ></a>
+            </RouterLink>
           </h2>
           <p>
             <small

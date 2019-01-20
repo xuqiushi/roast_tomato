@@ -5,7 +5,8 @@
         <p class="text-center">
           Powered by <a href="#">
             Xu Qiushi
-          </a>. Copyright &copy; 2018.
+          </a>. Copyright &copy; 2019 Xu
+          Qiushi.
         </p>
         <p class="text-center">
           <a
