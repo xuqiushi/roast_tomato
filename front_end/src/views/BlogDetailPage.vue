@@ -6,7 +6,15 @@
         <div
           class="d-flex justify-content-center col-12 col-md-8 col-xl-9 py-md-3 pl-md-5"
         >
-          <div><BlogDetailCard :blog-detail="blogDetail"></BlogDetailCard></div>
+          <div>
+            <BlogDetailCard :blog-detail="blogDetail"></BlogDetailCard>
+            <hr>
+            <BlogCommentInput :user-info="currentUserInfo"></BlogCommentInput>
+            <hr>
+            <BlogCommentList
+              :blog-comment-list="blogCommentList"
+            ></BlogCommentList>
+          </div>
         </div>
         <div class="col-12 col-md-4 col-xl-3">
           <div
@@ -14,13 +22,13 @@
             style="width: 18rem;"
           >
             <img
-              class="card-img-top"
+              class="card-img-top rounded-circle"
               :src="userInfo.userMainImage"
               alt="Card image cap"
             >
             <div class="card-body">
               <h5
-                class="card-title"
+                class="card-title text-center"
                 v-text="userInfo.userName"
               ></h5>
             </div>
@@ -38,9 +46,18 @@ import { Component } from "vue-property-decorator";
 import MainNavBar from "@/components/MainNavBar.vue";
 import Footer from "@/components/Footer.vue";
 import BlogDetailCard from "@/components/BlogDetailCard.vue";
+import BlogCommentInput from "@/components/BlogCommentInput.vue";
+import BlogCommentList from "@/components/BlogCommentList.vue";
 import { User } from "../../typings/userInterfaces";
+import { BlogComment } from "../../typings/blogInterfaces";
 @Component({
-  components: { BlogDetailCard, MainNavBar, Footer }
+  components: {
+    BlogDetailCard,
+    MainNavBar,
+    Footer,
+    BlogCommentInput,
+    BlogCommentList
+  }
 })
 export default class BlogDetailPage extends Vue {
   blogDetail = {
@@ -55,6 +72,21 @@ export default class BlogDetailPage extends Vue {
     userName: "",
     userMainImage: ""
   };
+  currentUserInfo: User = {
+    id: "",
+    userName: "",
+    userMainImage: ""
+  };
+  blogCommentList: BlogComment[] = [
+    {
+      id: "",
+      content: "",
+      userId: "",
+      userName: "",
+      userMainImage: "",
+      creatAt: 0
+    }
+  ];
   mounted() {
     this.$http({
       method: "post",
@@ -71,6 +103,18 @@ export default class BlogDetailPage extends Vue {
           this.userInfo = response.data;
         });
       });
+    this.$http({
+      method: "post",
+      url: "/api/users/current_user"
+    }).then(response => {
+      this.currentUserInfo = response.data;
+    });
+    this.$http({
+      method: "post",
+      url: "/api/blog_comment/" + this.blogDetail.id
+    }).then(response => {
+      this.blogCommentList = response.data;
+    });
   }
 }
 </script>
