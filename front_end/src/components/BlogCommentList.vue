@@ -17,15 +17,18 @@
           >
         </div>
         <div>
-          <h4
-            class=""
+          <div
+            class="d-flex align-items-center user-name"
             v-text="blogComment.userName"
-          ></h4>
+          ></div>
         </div>
         <div class="d-flex align-items-center">
-          <p v-text="blogComment.creatAt"></p>
           <div
-            class=""
+            class="ml-1"
+            v-text="blogComment.createAt"
+          ></div>
+          <div
+            class="ml-1"
             v-text="blogComment.content"
           ></div>
         </div>
@@ -67,4 +70,11 @@ export default class BlogCommentList extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+  li {
+    border: 0;
+  }
+  .user-name {
+    font-size: 1.5rem;
+  }
+</style>
