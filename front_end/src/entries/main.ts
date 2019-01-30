@@ -26,6 +26,8 @@ import '../scss/custom.scss'
 // import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css'
 import 'bootstrap/js/dist/util'
 import 'bootstrap/js/dist/scrollspy';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/monokai.css';
 import { start_mock } from '../mock/main-mock'
 start_mock()
 Vue.config.productionTip = false

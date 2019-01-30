@@ -71,10 +71,10 @@ export default class BlogCommentList extends Vue {
 </script>
 
 <style scoped>
-  li {
-    border: 0;
-  }
-  .user-name {
-    font-size: 1.5rem;
-  }
+li {
+  border: 0;
+}
+.user-name {
+  font-size: 1.5rem;
+}
 </style>
