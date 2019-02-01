@@ -27,7 +27,8 @@ import '../scss/custom.scss'
 import 'bootstrap/js/dist/util'
 import 'bootstrap/js/dist/scrollspy';
 import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/monokai.css';
+import 'codemirror/mode/markdown/markdown';
+import 'codemirror/theme/base16-light.css';
 import { start_mock } from '../mock/main-mock'
 start_mock()
 Vue.config.productionTip = false

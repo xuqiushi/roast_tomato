@@ -21,16 +21,8 @@
           rows="3"
         ></textarea>
       </div>
-      <div class="form-group row">
-        <label for="code-content">
-          内容
-        </label>
-        <textarea
-          id="code-content"
-          ref="codeContent"
-          rows="5"
-        ></textarea>
-      </div>
+      <CommonEditor class="form-group row">
+      </CommonEditor>
     </form>
   </div>
 </template>
@@ -38,23 +30,15 @@
 <script lang="ts">
 import Vue from "vue";
 import { Component } from "vue-property-decorator";
-import CodeMirror from "codemirror";
+import CommonEditor from '@/components/CommonEditor.vue'
 
-@Component
-export default class BlogCodeMirror extends Vue {
-  testContent = "";
-  mounted() {
-    let editor = CodeMirror.fromTextArea(
-      this.$refs.codeContent as HTMLTextAreaElement,
-      {
-        lineNumbers: true,
-        mode: "html"
-      }
-    );
-    editor.on("change", () => {
-      this.testContent = editor.getValue();
-    });
+@Component({
+  components: {
+    CommonEditor
   }
+})
+export default class BlogCodeMirror extends Vue {
+
 }
 </script>
 
