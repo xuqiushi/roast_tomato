@@ -37,7 +37,7 @@ import CommonEditor from "@/components/CommonEditor.vue";
     CommonEditor
   }
 })
-export default class BlogCodeMirror extends Vue {}
+export default class NovelCodeMirror extends Vue {}
 </script>
 
 <style scoped></style>
