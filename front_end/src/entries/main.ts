@@ -23,9 +23,11 @@ Vue.prototype.$http = axios
 // import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap'
 import '../scss/custom.scss'
+import '../scss/custom-code-mirror.scss'
 // import 'pc-bootstrap4-datetimepicker/build/css/bootstrap-datetimepicker.css'
 import 'bootstrap/js/dist/util'
 import 'bootstrap/js/dist/scrollspy';
+import 'codemirror/mode/markdown/markdown';
 import { start_mock } from '../mock/main-mock'
 start_mock()
 Vue.config.productionTip = false

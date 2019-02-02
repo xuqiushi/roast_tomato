@@ -33,12 +33,51 @@ export let start_mock = () => {
     },
   )
   Mock.mock(
+    /api\/blog_comment\/.*/,
+    'post',
+    [
+      {
+        "id": "@string(20)",
+        "content": '@cparagraph(1)',
+        "userId": '@string(20)',
+        "userName": '@cname',
+        "userMainImage": '@image(200x200)',
+        "createAt": '@integer(10)',
+      },
+      {
+        "id": "@string(20)",
+        "content": '@cparagraph(1)',
+        "userId": '@string(20)',
+        "userName": '@cname',
+        "userMainImage": '@image(200x200)',
+        "createAt": '@integer(10)',
+      },
+      {
+        "id": "@string(20)",
+        "content": '@cparagraph(1)',
+        "userId": '@string(20)',
+        "userName": '@cname',
+        "userMainImage": '@image(200x200)',
+        "createAt": '@integer(10)',
+      },
+    ],
+  )
+  Mock.mock(
     /api\/users\/.*/,
     'post',
     {
       "id": "@string(20)",
       "userName": '@cname',
-      "userMainImage": '@image(200x100)',
+      "userMainImage": '@image(200x200)',
     },
+  )
+  Mock.mock(
+    /api\/users\/current_user/,
+    'post',
+    {
+      "id": "@string(20)",
+      "userName": '@cname',
+      "userMainImage": '@image(200x200)',
+    }
   )
 }

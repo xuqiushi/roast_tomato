@@ -15,3 +15,11 @@ export interface BlogDetail {
   content: string;
   creatAt: number;
 }
+export interface BlogComment {
+  id: string;
+  content: string;
+  userId: string;
+  userName: string;
+  userMainImage: string;
+  creatAt: number;
+}

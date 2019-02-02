@@ -1,0 +1,12 @@
+@import '../../node_modules/codemirror/lib/codemirror.css';
+@import '../../node_modules/codemirror/theme/base16-light.css';
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+
+.CodeMirror-scroll {
+  height: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
