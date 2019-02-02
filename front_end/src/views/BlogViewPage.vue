@@ -74,7 +74,7 @@ export default class BlogViewPage extends Vue {
       this.paginationPara.countAll = response.data.countAll;
     });
   }
-  private changeCurrentPage(pageNumber: number) {
+  changeCurrentPage(pageNumber: number) {
     this.paginationPara.selectNow = pageNumber;
   }
 }

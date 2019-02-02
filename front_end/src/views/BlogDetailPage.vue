@@ -90,7 +90,7 @@ export default class BlogDetailPage extends Vue {
   mounted() {
     this.$http({
       method: "post",
-      url: "/api/blog/" + this.$route.params.blogId
+      url: "/api/blog/" + this.$route.params["blogId"]
     })
       .then(response => {
         this.blogDetail = response.data;

@@ -13,11 +13,11 @@ const mutations = {
         state.warningMessages.push(message)
     },
     deleteWarningMessage: (state: State, index: number) => {
-        console.log(state.warningMessages)
+        // console.log(state.warningMessages)
         state.warningMessages.splice(index, 1)
-        console.log(state.warningMessages)
+        // console.log(state.warningMessages)
     },
-    deleteAllWarningMessages: (state: State, index: number) => {
+    deleteAllWarningMessages: (state: State) => {
         state.warningMessages.splice(0, state.warningMessages.length)
     }
 };

@@ -47,12 +47,14 @@
             class="dropdown-menu"
             aria-labelledby="blog-dropdown"
           >
-            <a
+            <RouterLink
               class="dropdown-item"
-              href="#"
+              :to="{
+                name: 'BlogCreatePage'
+              }"
             >
               创建
-            </a>
+            </RouterLink>
             <a
               class="dropdown-item"
               href="#"
@@ -76,12 +78,14 @@
             class="dropdown-menu"
             aria-labelledby="novel-dropdown"
           >
-            <a
+            <RouterLink
               class="dropdown-item"
-              href="#"
+              :to="{
+                name: 'NovelCreatePage'
+              }"
             >
               创建
-            </a>
+            </RouterLink>
             <a
               class="dropdown-item"
               href="#"
