@@ -22,7 +22,7 @@ async def index(request, *, page="1"):
     # check_admin(request)
     page_index = get_page_index(page)
     num = await Blog.find_number("count(id)")
-    page = Page(n   um, page_index)
+    page = Page(num, page_index)
     if num == 0:
         blog_list = []
     else:
