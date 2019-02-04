@@ -7,6 +7,7 @@ const RegisterPage = () => import(/* webpackChunkName: "register" */ '@/views/Re
 const BlogViewPage = () => import(/* webpackChunkName: "blog-view" */ '@/views/BlogViewPage.vue')
 const BlogDetailPage = () => import(/* webpackChunkName: "blog-detail" */ '@/views/BlogDetailPage.vue')
 const BlogCreatePage = () => import(/* webpackChunkName: "blog-create" */ '@/views/BlogCreatePage.vue')
+const BlogManagePage = () => import(/* webpackChunkName: "blog-manage" */ '@/views/BlogManagePage.vue')
 const NovelCreatePage = () => import(/* webpackChunkName: "novel-create" */ '@/views/NovelCreatePage.vue')
 export default new VueRouter({
   mode: 'history',
@@ -14,7 +15,7 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'index',
+      name: 'Index',
       redirect: '/blog/view'
     },
     {
@@ -41,6 +42,11 @@ export default new VueRouter({
       path: '/blog/create/',
       name: 'BlogCreatePage',
       component: BlogCreatePage
+    },
+    {
+      path: '/blog/manage/',
+      name: 'BlogManage',
+      component: BlogManagePage
     },
     {
       path: '/novel/create/',

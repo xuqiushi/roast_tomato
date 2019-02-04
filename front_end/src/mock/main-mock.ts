@@ -22,7 +22,7 @@ export let start_mock = () => {
       },
   )
   Mock.mock(
-    /api\/blog\/.*/,
+    /api\/blog\/[^\/]*$/,
     'post',
     {
       "id": "@string(20)",
@@ -78,6 +78,20 @@ export let start_mock = () => {
       "id": "@string(20)",
       "userName": '@cname',
       "userMainImage": '@image(200x200)',
+    }
+  )
+  Mock.mock(
+    /api\/blog\/manage\/get_list/,
+    'post',
+    {
+      'blogManageRecords|20': [
+        {
+          "id": "@string(20)",
+          "name": '@title',
+          "userName": '@cname',
+          "createAt": '@integer(10)',
+        }
+      ]
     }
   )
 }

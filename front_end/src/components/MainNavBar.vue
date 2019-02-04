@@ -23,14 +23,14 @@
     >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a
+          <RouterLink
             class="nav-link"
-            href="#"
+            :to="{ name: 'Index' }"
           >
             吐槽的番茄 <span class="sr-only">
               (current)
             </span>
-          </a>
+          </RouterLink>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -55,12 +55,14 @@
             >
               创建
             </RouterLink>
-            <a
+            <RouterLink
               class="dropdown-item"
-              href="#"
+              :to="{
+                name: 'BlogManage'
+              }"
             >
               管理
-            </a>
+            </RouterLink>
           </div>
         </li>
         <li class="nav-item dropdown">
