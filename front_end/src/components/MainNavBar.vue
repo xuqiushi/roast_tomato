@@ -23,14 +23,14 @@
     >
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a
+          <RouterLink
             class="nav-link"
-            href="#"
+            :to="{ name: 'Index' }"
           >
             吐槽的番茄 <span class="sr-only">
               (current)
             </span>
-          </a>
+          </RouterLink>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -47,18 +47,22 @@
             class="dropdown-menu"
             aria-labelledby="blog-dropdown"
           >
-            <a
+            <RouterLink
               class="dropdown-item"
-              href="#"
+              :to="{
+                name: 'BlogCreatePage'
+              }"
             >
               创建
-            </a>
-            <a
+            </RouterLink>
+            <RouterLink
               class="dropdown-item"
-              href="#"
+              :to="{
+                name: 'BlogManage'
+              }"
             >
               管理
-            </a>
+            </RouterLink>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -76,12 +80,14 @@
             class="dropdown-menu"
             aria-labelledby="novel-dropdown"
           >
-            <a
+            <RouterLink
               class="dropdown-item"
-              href="#"
+              :to="{
+                name: 'NovelCreatePage'
+              }"
             >
               创建
-            </a>
+            </RouterLink>
             <a
               class="dropdown-item"
               href="#"

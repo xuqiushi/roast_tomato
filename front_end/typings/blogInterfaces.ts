@@ -15,11 +15,21 @@ export interface BlogDetail {
   content: string;
   creatAt: number;
 }
+export interface BlogCodeMirrorStructure {
+  codeTitle: string;
+  codeSummary: string;
+  codeContent: string;
+}
 export interface BlogComment {
   id: string;
   content: string;
   userId: string;
   userName: string;
   userMainImage: string;
+  creatAt: number;
+}
+export interface BlogManageRecord {
+  name: string;
+  userName: string;
   creatAt: number;
 }

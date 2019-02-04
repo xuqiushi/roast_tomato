@@ -56,6 +56,7 @@ export default class CommonEditor extends Vue {
     editor.on("change", () => {
       this.testContent = editor.getValue();
       this.$refs.codePreview.innerHTML = marked(this.testContent);
+      this.$emit("send-editor-value", this.testContent);
     });
   }
 }
