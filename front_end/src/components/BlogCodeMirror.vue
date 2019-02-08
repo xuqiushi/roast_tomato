@@ -28,6 +28,21 @@
         @send-editor-value="setCodeContent"
       >
       </CommonEditor>
+      <div class="form-group row justify-content-center">
+        <button
+          type="button"
+          class="btn btn-primary btn-lg btn3d mr-5"
+          @click="createBlog"
+        >
+          确定
+        </button>
+        <button
+          type="button"
+          class="btn btn-danger btn-lg btn3d ml-5"
+        >
+          取消
+        </button>
+      </div>
     </form>
   </div>
 </template>
@@ -68,6 +83,18 @@ export default class BlogCodeMirror extends Vue {
   @Watch("codeContent")
   onCodeContentChange() {
     this.sendBlogStructure();
+  }
+  createBlog() {
+    let postData = {
+      name: this.codeTitle,
+      summary: this.codeSummary,
+      content: this.codeContent
+    };
+    this.$http({
+      method: "post",
+      url: "/api/blog/create",
+      data: postData
+    });
   }
 }
 </script>

@@ -23,6 +23,20 @@
       </div>
       <CommonEditor class="form-group row">
       </CommonEditor>
+      <div class="form-group row justify-content-center">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg btn3d mr-5"
+        >
+          确定
+        </button>
+        <button
+          type="reset"
+          class="btn btn-danger btn-lg btn3d ml-5"
+        >
+          取消
+        </button>
+      </div>
     </form>
   </div>
 </template>
