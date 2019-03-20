@@ -6,7 +6,7 @@ import logging
 
 import aiomysql
 
-from back_end.exceptions import StandardError
+from exceptions import StandardError
 
 
 def log(sql, args=()):

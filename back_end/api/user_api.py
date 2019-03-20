@@ -5,11 +5,11 @@ import os
 
 from aiohttp import web
 
-from back_end.controller.router_register import post, get
-from back_end.exceptions import APIValueError, APIError
-from back_end.models.models import User, Blog, Novels, Comments, NovelComments, UserPic, next_id
-from back_end.controller.common_controller import get_page_index, Page
-from back_end.controller.user_controller import COOKIE_NAME, check_admin, user2cookie, _RE_EMAIL, _RE_SHA1
+from controller.router_register import post, get
+from exceptions import APIValueError, APIError
+from models.models import User, Blog, Novels, Comments, NovelComments, UserPic, next_id
+from controller.common_controller import get_page_index, Page
+from controller.user_controller import COOKIE_NAME, check_admin, user2cookie, _RE_EMAIL, _RE_SHA1
 
 
 @post("/api/authenticate")

@@ -13,10 +13,10 @@ from aiohttp.web import middleware
 from jinja2 import Environment, FileSystemLoader
 
 from config import configs
-from back_end.models import orm
-from back_end.controller.router_register import add_routes, add_static
+from models import orm
+from controller.router_register import add_routes, add_static
 
-from back_end.controller.user_controller import COOKIE_NAME, cookie2user
+from controller.user_controller import COOKIE_NAME, cookie2user
 
 
 def init_jinja2(app, **kw):
@@ -31,7 +31,7 @@ def init_jinja2(app, **kw):
     )
     path = kw.get("path", None)
     if path is None:
-        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "back_end/templates")
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
     logging.info("set jinja2 template path: %s" % path)
     env = Environment(loader=FileSystemLoader(path), **options)
     filters = kw.get("filters", None)
@@ -153,8 +153,8 @@ async def init(event_loop):
         loop=event_loop, middlewares=[logger_factory, auth_factory, data_factory, response_factory]
     )
     init_jinja2(app, filters=dict(datetime=datetime_filter))
-    add_routes(app, 'back_end', 'views')
-    add_routes(app, 'back_end', 'api')
+    add_routes(app, '.', 'views')
+    add_routes(app, '.', 'api')
     add_static(app)
     app_runner = web.AppRunner(app)
     await app_runner.setup()

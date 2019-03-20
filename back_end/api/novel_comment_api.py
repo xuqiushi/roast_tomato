@@ -1,8 +1,8 @@
-from back_end.controller.router_register import get, post
-from back_end.exceptions import APIPermissionError, APIValueError, APIResourceNotFoundError
-from back_end.models.models import NovelComments, Novels
-from back_end.controller.common_controller import get_page_index, Page
-from back_end.controller.user_controller import check_admin
+from controller.router_register import get, post
+from exceptions import APIPermissionError, APIValueError, APIResourceNotFoundError
+from models.models import NovelComments, Novels
+from controller.common_controller import get_page_index, Page
+from controller.user_controller import check_admin
 
 
 @get("/api/novel_comments")

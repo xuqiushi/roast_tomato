@@ -1,7 +1,7 @@
 import markdown2
 
-from back_end.controller.router_register import get
-from back_end.models.models import (
+from controller.router_register import get
+from models.models import (
     Blog,
     User,
     NovelTree,
@@ -10,11 +10,11 @@ from back_end.models.models import (
     UserPic,
     Comments,
 )
-from back_end.controller.novel_controller import find_total_tree
-from back_end.controller.common_controller import get_page_index, text2html, Page
+from controller.novel_controller import find_total_tree
+from controller.common_controller import get_page_index, text2html, Page
 
 
-# from back_end.controller.user_controller import check_admin
+# from controller.user_controller import check_admin
 
 
 @get("/")

@@ -4,8 +4,8 @@ import logging
 import re
 import time
 
-from back_end.exceptions import APIPermissionError
-from back_end.models.models import User
+from exceptions import APIPermissionError
+from models.models import User
 from config import configs
 
 COOKIE_NAME = "roast_tomato_session"
