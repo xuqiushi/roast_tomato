@@ -50,7 +50,7 @@ export default class BlogPreviewList extends Vue {
   @Prop({
     type: Array,
     required: true,
-    default: []
+    default: ()=>{return []}
   })
   previewBlogList!: PreviewBlogContent[];
 }
