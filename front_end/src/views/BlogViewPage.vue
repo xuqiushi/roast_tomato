@@ -61,15 +61,16 @@ export default class BlogViewPage extends Vue {
   }
   mounted() {
     this.$http({
-      method: "post",
+      method: "get",
       url: "/api/blog_list",
-      data: this.paginationPara.selectNow
+      params: { page: this.paginationPara.selectNow }
     }).then(response => {
       this.previewBlogList = response.data.previewBlogList;
     });
     this.$http({
-      method: "post",
-      url: "api/get_blog_pagination_count"
+      method: "get",
+      url: "/api/get_blog_pagination_count",
+      params: { page_count: 2 }
     }).then(response => {
       this.paginationPara.countAll = response.data.countAll;
     });

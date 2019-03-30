@@ -1,4 +1,4 @@
-from back_end.models.models import NovelTree
+from models.models import NovelTree
 
 
 async def find_total_tree(nodes, pre_club: []):

@@ -10,7 +10,7 @@ from urllib import parse
 
 from aiohttp import web
 
-from back_end.exceptions import APIError
+from exceptions import APIError
 
 
 def get(path):
@@ -191,21 +191,20 @@ def add_route(app, fn):
         fn = asyncio.coroutine(fn)
     logging.info(
         "add route %s %s => %s(%s)"
-        % (
-            method,
-            path,
-            fn_name,
-            ", ".join(inspect.signature(fn).parameters.keys()),
-        )
+        % (method, path, fn_name, ", ".join(inspect.signature(fn).parameters.keys()))
     )
     app.router.add_route(method, path, RequestHandler(app, fn))
 
 
 def add_routes(app, first_level_dir, module_dir):
-    module_names = list(os.walk(first_level_dir+'/'+module_dir))[0][2]
+    module_names = list(os.walk(first_level_dir + "/" + module_dir))[0][2]
     for module_name in module_names:
         n = module_name.rfind(".py")
-        name = first_level_dir+'.'+module_dir+'.'+module_name[:n]
+        name = (
+            first_level_dir + "." + module_dir + "." + module_name[:n]
+            if first_level_dir != "."
+            else module_dir + "." + module_name[:n]
+        )
         mod = __import__(name, globals(), locals(), [name])
         for attr in dir(mod):
             if attr.startswith("_"):

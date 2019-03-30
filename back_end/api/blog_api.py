@@ -1,8 +1,28 @@
-from back_end.controller.router_register import get, post
-from back_end.exceptions import APIValueError
-from back_end.models.models import Blog
-from back_end.controller.common_controller import get_page_index, Page
-from back_end.controller.user_controller import check_admin
+from controller.router_register import get, post
+from exceptions import APIValueError
+from models.models import Blog
+from controller.common_controller import get_page_index, Page
+from controller.user_controller import check_admin
+
+
+# @get("/api/blog_list")
+# async def api_blog_list(*, page="1"):
+#     page_index = get_page_index(page)
+#     num = await Blog.find_number("count(id)")
+#     p = Page(num, page_index)
+#     if num == 0:
+#         return dict(page=p, blog_list=())
+#     blog_list = await Blog.find_all(
+#         orderBy="created_at desc", limit=(p.offset, p.limit)
+#     )
+#     return dict(page=p, blog_list=blog_list)
+
+
+@get("/api/get_blog_pagination_count")
+async def api_blog_pagination_count(*, page_count=1):
+    page_count = int(page_count)
+    num = await Blog.find_number("count(id)")
+    return {"countAll": (num + (page_count - num % page_count)) / page_count}
 
 
 @get("/api/blog_list")
@@ -15,13 +35,33 @@ async def api_blog_list(*, page="1"):
     blog_list = await Blog.find_all(
         orderBy="created_at desc", limit=(p.offset, p.limit)
     )
-    return dict(page=p, blog_list=blog_list)
+    return dict(page=p, previewBlogList=blog_list)
 
 
 @get("/api/blog_list/{blog_id}")
 async def api_get_blog(*, blog_id):
     blog = await Blog.find(blog_id)
     return blog
+
+
+@post("/api/blog/create")
+async def api_blog_create(request, *, name, summary, content):
+    # check_admin(request)
+    if not name or not name.strip():
+        raise APIValueError("name", "name cannot be empty.")
+    if not summary or not summary.strip():
+        raise APIValueError("summary", "summary cannot be empty.")
+    if not content or not content.strip():
+        raise APIValueError("content", "content cannot be empty.")
+    blog = Blog(
+        user_id=request.__user__.id,
+        user_name=request.__user__.name,
+        user_image=request.__user__.image,
+        name=name.strip(),
+        summary=summary.strip(),
+        content=content.strip(),
+    )
+    await blog.save()
 
 
 @post("/api/blog_list")

@@ -4,7 +4,7 @@
     <div class="container-fluid">
       <BlogCodeMirror @send-blog-structure="setBlogStructure"></BlogCodeMirror>
     </div>
-    <footer></footer>
+    <Footer></Footer>
   </div>
 </template>
 

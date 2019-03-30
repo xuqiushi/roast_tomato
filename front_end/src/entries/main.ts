@@ -28,8 +28,8 @@ import '../scss/custom-code-mirror.scss'
 import 'bootstrap/js/dist/util'
 import 'bootstrap/js/dist/scrollspy';
 import 'codemirror/mode/markdown/markdown';
-import { start_mock } from '../mock/main-mock'
-start_mock()
+// import { start_mock } from '../mock/main-mock'
+// start_mock()
 Vue.config.productionTip = false
 new Vue({
   router,
