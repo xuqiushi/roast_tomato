@@ -10,7 +10,7 @@
     "server": "DEBUG='express:*' webpack-dev-server --progress --config build/webpack.dev.config.js",
     "win-server": "webpack-dev-server --progress --config build/webpack.dev.config.js",
     "eslint-fix": "eslint src/**/**/*.vue --fix",
-    "format-code": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.vue\""
+    "format-code": "prettier-eslint --write \"build/*\" \"src/**/*.js\" \"src/**/*.vue\""
   },
   "author": "Xu Qiushi",
   "license": "ISC",
@@ -53,10 +53,14 @@
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.3.1",
     "marked": "^0.6.0",
+    "mini-css-extract-plugin": "^0.5.0",
     "mockjs": "^1.0.1-beta3",
     "node-sass": "^4.11.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
     "popper.js": "^1.14.6",
+    "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
+    "postcss-url": "^8.0.0",
     "precss": "^4.0.0",
     "prettier-eslint-cli": "^4.7.1",
     "sass-loader": "^7.1.0",
