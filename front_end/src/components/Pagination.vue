@@ -1,6 +1,9 @@
 <template>
-  <nav aria-label="blog-pagination">
-    <ul class="pagination justify-content-center">
+  <nav
+    class="row justify-content-md-center"
+    aria-label="blog-pagination"
+  >
+    <ul class="pagination">
       <li
         :class="
           'page-item ' + [PaginationStructure.selectNow === 1 ? 'disabled' : '']

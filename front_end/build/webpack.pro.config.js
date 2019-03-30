@@ -27,7 +27,7 @@ let pathsToClean = [
 let cleanOptions = {
   root: path.resolve(__dirname, "../../back_end/static"),
   // 下边可以添加想要排除的文件
-  exclude: ['./css/uikit.*.css'],
+  exclude: ["./css/uikit.*.css"],
   verbose: true,
   dry: false
 };

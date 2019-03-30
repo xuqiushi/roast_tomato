@@ -4,9 +4,9 @@
     <div class="container-fluid">
       <div class="row d-flex flex-xl-nowrap mt-5 ml-5">
         <div
-          class="d-flex justify-content-center col-12 col-md-9 col-xl-10 py-md-3 pl-md-5"
+          class="d-flex justify-content-left col-12 col-md-9 col-xl-10 py-md-3 pl-md-5"
         >
-          <div>
+          <div class="content-block">
             <BlogPreviewList
               :preview-blog-list="previewBlogList"
             ></BlogPreviewList>
@@ -81,4 +81,8 @@ export default class BlogViewPage extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.content-block {
+  width: 100%;
+}
+</style>

@@ -6,19 +6,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackHardDiskPlugin = require("html-webpack-harddisk-plugin");
+const postcssConfig = require("../postcss.config");
 
 let pathsToClean = [
+  "css/blog.*.css",
+  "css/novel.*.css",
+  "css/register.*.css",
+  "css/signin.*.css",
   "favicon.ico",
-  "main.*.js",
-  "register*.js",
-  "signin.*.js",
-  "vendor.*.js",
-  "common.*.js",
-  "main.*.gz",
-  "register*.gz",
-  "signin.*.gz",
-  "vendor.*.gz",
-  "common.*.gz"
+  "*.*.js",
+  "*.*.gz"
 ];
 
 // the clean options to use
@@ -121,10 +118,7 @@ module.exports = {
           {
             loader: "postcss-loader", // Run post css actions
             options: {
-              plugins: function() {
-                // post css plugins, can be exported to postcss.config.js
-                return [require("precss"), require("autoprefixer")];
-              }
+              plugins: postcssConfig
             }
           },
           {
