@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from typing import Callable
+import re
+import json
+import datetime
 
 
 def get_page_index(page_str):
@@ -92,6 +96,51 @@ class Page(object):
         )
 
     __repr__ = __str__
+
+
+class JSONEncoder(json.JSONEncoder):
+    """
+    将json格式的题目中不符合规范的数值类型进行转换
+    """
+
+    def default(self, o):
+        if isinstance(o, datetime.datetime):
+            return str(o)
+        return json.JSONEncoder.default(self, o)
+
+
+class BackDataKeyConvention(object):
+
+    def __call__(self, back_doc):
+        changed_key_doc = self.change_naming_convention(back_doc, self._underline_to_camel)
+        changed_type_doc = json.loads(JSONEncoder().encode(changed_key_doc))
+        return changed_type_doc
+
+    @classmethod
+    def change_naming_convention(cls, origin, convert_function: Callable):
+        if isinstance(origin, list):
+            new_list = []
+            for info in origin:
+                new_list.append(cls.change_naming_convention(info, convert_function))
+            return new_list
+        elif isinstance(origin, dict):
+            new_dict = {}
+            for k, v in origin.items():
+                if isinstance(v, dict):
+                    new_v = cls.change_naming_convention(v, convert_function)
+                elif isinstance(v, list):
+                    new_v = [cls.change_naming_convention(x, convert_function) for x in v]
+                else:
+                    new_v = v
+                new_dict[convert_function(k)] = new_v
+            return new_dict
+        else:
+            return origin
+
+    @classmethod
+    def _underline_to_camel(cls, name):
+        under_pat = re.compile(r"_([0-9a-z])")
+        return under_pat.sub(lambda x: x.group(1).upper(), name)
 
 
 if __name__ == "__main__":

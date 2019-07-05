@@ -16,6 +16,7 @@ from config import configs
 from models import orm
 from controller.router_register import add_routes, add_static
 
+from controller.common_controller import BackDataKeyConvention
 from controller.user_controller import COOKIE_NAME, cookie2user
 
 
