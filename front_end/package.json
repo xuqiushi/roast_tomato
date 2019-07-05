@@ -8,7 +8,7 @@
     "build_detail": "webpack --display-modules --display-chunks --config build/webpack.pro.config.js --mode production",
     "build": "webpack --progress --hide-modules --config build/webpack.pro.config.js",
     "server": "DEBUG='express:*' webpack-dev-server --progress --config build/webpack.dev.config.js",
-    "win-server": "webpack-dev-server --progress --config build/webpack.dev.config.js",
+    "win_server": "set DEBUG='express:*' && webpack-dev-server --progress --config build/webpack.dev.config.js",
     "eslint-fix": "eslint src/**/**/*.vue --fix",
     "format-code": "prettier-eslint --write \"build/*\" \"src/**/*.js\" \"src/**/*.vue\""
   },
