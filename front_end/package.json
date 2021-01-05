@@ -24,7 +24,7 @@
     "@types/mockjs": "^1.0.2",
     "@types/webpack": "^4.4.22",
     "autoprefixer": "^9.4.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.4",
     "babel-plugin-transform-runtime": "^6.23.0",
